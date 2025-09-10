@@ -2,7 +2,7 @@ package amielpt4;
 
 import java.util.Scanner;
 
-public class AmielSalaryPt4 {
+public class Panganiban_AmielPT4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
