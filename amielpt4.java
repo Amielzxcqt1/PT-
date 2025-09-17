@@ -1,3 +1,4 @@
+
 package amielpt4;
 
 import java.util.Scanner;
@@ -15,7 +16,7 @@ public class Panganiban_AmielPT4 {
 
         // Deductions rates and amounts
         double sssRate = 0.045; // 4.5%
-        double pagIbigContribution = 200.0;
+        double pagIbigContribution = 600.0;
         double withholdingTaxRate = 0.10; // 10%
 
         // Inputs from user for this month 
@@ -64,9 +65,9 @@ public class Panganiban_AmielPT4 {
         System.out.println("  Pag-Ibig Contribution + Adjustment: P" + totalPagIbig);
         System.out.println("  Withholding Tax (10%): P" + withholdingTax);
         System.out.printf("  Late Deduction (0f minutes): P" + lateDeduction);
-                System.out.println("");
-        System.out.println("Total Deductions: P" + totalDeductions);
-        System.out.println("Net Pay: P" + netPay);
+        System.out.println("");
+        System.out.println( " Total Deductions: P" + totalDeductions);
+        System.out.println( " Net Pay: P" + netPay);
 
         scanner.close();
     }
