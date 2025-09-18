@@ -1,9 +1,8 @@
-
-package amielpt4;
+package com.mycompany.pt123456;
 
 import java.util.Scanner;
 
-public class Panganiban_AmielPT4 {
+public class AmielSalaryPt4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -16,7 +15,7 @@ public class Panganiban_AmielPT4 {
 
         // Deductions rates and amounts
         double sssRate = 0.045; // 4.5%
-        double pagIbigContribution = 600.0;
+        double pagIbigContribution = 200.0;
         double withholdingTaxRate = 0.10; // 10%
 
         // Inputs from user for this month 
@@ -32,7 +31,10 @@ public class Panganiban_AmielPT4 {
         // Calculate deductions and pays
         // Calculate leave deduction (if leave credits are used, no deduction for those days)
         int unpaidLeaveDays = vacationDays - leaveCredits;
-       
+        if (unpaidLeaveDays < 0) {
+            unpaidLeaveDays = 0; // no unpaid leave if leave credits cover vacation
+        }
+
         // Calculate gross pay adjusted for unpaid leave
         double grossPay = monthlySalary - (unpaidLeaveDays * dailyRate);
 
@@ -64,10 +66,9 @@ public class Panganiban_AmielPT4 {
         System.out.println("  SSS Contribution (4.5%): P" + sssContribution);
         System.out.println("  Pag-Ibig Contribution + Adjustment: P" + totalPagIbig);
         System.out.println("  Withholding Tax (10%): P" + withholdingTax);
-        System.out.printf("  Late Deduction (0f minutes): P" + lateDeduction);
-        System.out.println("");
-        System.out.println( " Total Deductions: P" + totalDeductions);
-        System.out.println( " Net Pay: P" + netPay);
+        System.out.printf("  Late Deduction (0f minutes): P" + (double)minutesLate, lateDeduction);
+        System.out.println("Total Deductions: P" + totalDeductions);
+        System.out.println("Net Pay: P" + netPay);
 
         scanner.close();
     }
